@@ -2,26 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-gray-900;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  input[type="text"] {
+    @apply bg-gray-600 p-3 md:w-[500px] rounded-l shadow-lg focus:border-none outline-1 focus:outline-blue-500 text-white text-sm;
+  }
+  button[type="submit"] {
+    @apply text-sm p-3 rounded-r bg-blue-950 shadow-lg text-white font-semibold hover:bg-white hover:text-blue-950 duration-300;
+  }
 }
